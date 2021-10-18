@@ -15,29 +15,29 @@ ______________________________________
 
 int Ex4(int arr[], int n){
 	//Your codes here
-    int result = 0;
-
+    int m = 0;
+    int i;
     for(int i = 0; i < n - 1; i++){
         if(arr[i] <= arr[i + 1]){
-            result = 1;
+            m = 1;
         }else{
-            result = 0;
+            m = 0;
             break;
         }
     }
 
-    if (result == 0){
+    if (m == 0){
         for(int i = 0; i < n - 1; i++){
             if(arr[i] >= arr[i + 1]){
-                result = -1;
+                m = -1;
             }else{
-                result = 0;
+                m = 0;
                 break;
             }
         }
     }
 
-    return result;
+    return m;
 }
 
 int main(int argc, char *argv[]) {
