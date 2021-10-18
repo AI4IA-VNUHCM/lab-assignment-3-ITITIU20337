@@ -13,10 +13,21 @@ Ex:
 #include <math.h>
 
 void Ex1(int arr[], int n){
-	//Your codes here
-    
-}
-
+	int m=1;
+	int k;
+	for(int i=0,  k=n-1; i < k; i++,k--){
+		if(arr[i] != arr[k]){
+			 m=0;
+			 break;
+		}
+	}
+	    if (m){
+			printf("symmetric");
+		}
+		else{
+			printf("asymmetric");
+		}
+	}
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
 	argc--;
