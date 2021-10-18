@@ -12,9 +12,32 @@ ______________________________________
 #include <stdlib.h>
 #include <math.h>
 
+
 int Ex4(int arr[], int n){
 	//Your codes here
-	
+    int result = 0;
+    int i;
+    for(i = 0; i < (n - 1); i++){
+        if(arr[i] <= arr[i + 1]){
+            result = 1;
+        }else{
+            result = 0;
+            break;
+        }
+    }
+
+    if (result == 0){
+        for(i = 0; i < (n - 1); i++){
+            if(arr[i] >= arr[i + 1]){
+                result = -1;
+            }else{
+                result = 0;
+                break;
+            }
+        }
+    }
+
+    return result;
 }
 
 int main(int argc, char *argv[]) {
@@ -23,9 +46,13 @@ int main(int argc, char *argv[]) {
 	int testcase[argc],i;
 	for(i=0; i<argc;i++){
 		testcase[i] = atoi(argv[i+1]);
+		// printf("%d ", testcase[i]);
 	}
 	
-	printf("%d", Ex4(testcase, argc));
+	int result = Ex4(testcase, argc);
+    printf("%d", result);
+
+    printf("\n");
 
 	return 0;
 }

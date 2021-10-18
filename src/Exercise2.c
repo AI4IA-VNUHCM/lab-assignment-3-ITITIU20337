@@ -14,6 +14,32 @@ Ex:
 
 void Ex2(int arr[], int n){
 	//Your codes here
+	int i,k;
+	for(i=0;i<n;i++){
+	 if (arr[i] % 2 == 0){
+		 for(k=i+1;k<n;k++){
+			 if((arr[k] % 2 == 0) && (arr[k]>arr[i])){
+			    int test= arr[i];
+				arr[i]=arr[k];
+				arr[k]=test;
+			    
+			 }
+		 }
+	 }
+	 if (arr[i] % 2 != 0){
+		 for(k=i+1;k<n;k++){
+			 if((arr[k] % 2 != 0) && (arr[k]<arr[i])){
+               int test= arr[i];
+			   arr[i]=arr[k];
+			   arr[k]=test;
+			   
+			 }  
+		 }
+	 }  
+	}
+	for(i=0;i<n;i++){
+      printf("%d ",arr[i]);
+	}
 	
 }
 
